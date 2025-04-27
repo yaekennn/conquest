@@ -891,7 +891,7 @@ do
                 Thickness = 0.001,
                 Filled = false,
                 ZIndex = 65,
-                Hidden = true
+                Hidden = false
             });window.cursor["cursor"] = cursor
             --
             local cursor_inline = utility:Create("Triangle", nil, {
