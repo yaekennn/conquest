@@ -914,7 +914,7 @@ do
                 cursor_inline.PointC = Vector2.new(mouseLocation.X + 6, mouseLocation.Y + 16)
             end)
             --
-            uis.MouseIconEnabled = true
+            uis.MouseIconEnabled = false
             --
             return window.cursor
         end
@@ -947,7 +947,7 @@ do
             --
             window:Watermark()
             window:KeybindsList()
-            -- window:Cursor()
+            window:Cursor()
             --
             window:Fade()
         end
