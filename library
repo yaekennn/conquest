@@ -595,7 +595,7 @@ do
             library.ended = nil
             library.changed = nil
             --
-            uis.MouseIconEnabled = true
+            uis.MouseIconEnabled = false
         end
         --
         function window:Watermark(info)
