@@ -55,7 +55,7 @@ local theme = {
     inline = Color3.fromRGB(50, 50, 50),
     textcolor = Color3.fromRGB(255, 255, 255),
     textborder = Color3.fromRGB(0, 0, 0),
-    cursoroutline = Color3.fromRGB(1),
+    cursoroutline = Color3.fromRGB(10, 10, 10),
     font = 2,
     textsize = 13
 }
@@ -888,7 +888,7 @@ do
             --
             local cursor = utility:Create("Triangle", nil, {
                 Color = theme.cursoroutline,
-                Thickness = 2.5,
+                Thickness = 0.0001,
                 Filled = false,
                 ZIndex = 65,
                 Hidden = true
