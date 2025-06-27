@@ -55,7 +55,7 @@ local theme = {
     inline = Color3.fromRGB(50, 50, 50),
     textcolor = Color3.fromRGB(255, 255, 255),
     textborder = Color3.fromRGB(0, 0, 0),
-    cursoroutline = Color3.fromRGB(10, 10, 10),
+    cursoroutline = Color3.fromRGB(1),
     font = 2,
     textsize = 13
 }
