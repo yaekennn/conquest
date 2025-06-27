@@ -956,7 +956,7 @@ do
             if Input.UserInputType == Enum.UserInputType.MouseButton1 and window.isVisible and window.isVisible and utility:MouseOverDrawing({main_frame.Position.X,main_frame.Position.Y,main_frame.Position.X + main_frame.Size.X,main_frame.Position.Y + 20}) then
                 local mouseLocation = utility:MouseLocation()
                 --
-                window.dragging = true
+                window.dragging = false
                 window.drag = Vector2.new(mouseLocation.X - main_frame.Position.X, mouseLocation.Y - main_frame.Position.Y)
             end
         end
