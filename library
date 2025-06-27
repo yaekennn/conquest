@@ -375,7 +375,7 @@ do
         --
         theme.accent = accent
         --
-        local window = {pages = {}, isVisible = false, uibind = Enum.KeyCode.Insert, currentPage = nil, fading = false, dragging = false, drag = Vector2.new(0,0), currentContent = {frame = 60, dropdown = nil, multibox = nil, colorpicker = nil, keybind = nil}}
+        local window = {pages = {}, isVisible = false, uibind = Enum.KeyCode.Z, currentPage = nil, fading = false, dragging = false, drag = Vector2.new(0,0), currentContent = {frame = nil, dropdown = nil, multibox = nil, colorpicker = nil, keybind = nil}}
         --
         local main_frame = utility:Create("Frame", {Vector2.new(0,0)}, {
             Size = utility:Size(0, size.X, 0, size.Y),
@@ -888,7 +888,7 @@ do
             --
             local cursor = utility:Create("Triangle", nil, {
                 Color = theme.cursoroutline,
-                Thickness = 0.0001,
+                Thickness = 2.5,
                 Filled = false,
                 ZIndex = 65,
                 Hidden = true
@@ -914,7 +914,7 @@ do
                 cursor_inline.PointC = Vector2.new(mouseLocation.X + 6, mouseLocation.Y + 16)
             end)
             --
-            uis.MouseIconEnabled = true
+            uis.MouseIconEnabled = false
             --
             return window.cursor
         end
@@ -931,7 +931,7 @@ do
             --
             window.cursor["cursor"].Transparency = window.isVisible and 1 or 0
             window.cursor["cursor_inline"].Transparency = window.isVisible and 1 or 0
-            uis.MouseIconEnabled = true
+            uis.MouseIconEnabled = not window.isVisible
             --
             window.fading = false
         end
@@ -956,7 +956,7 @@ do
             if Input.UserInputType == Enum.UserInputType.MouseButton1 and window.isVisible and window.isVisible and utility:MouseOverDrawing({main_frame.Position.X,main_frame.Position.Y,main_frame.Position.X + main_frame.Size.X,main_frame.Position.Y + 20}) then
                 local mouseLocation = utility:MouseLocation()
                 --
-                window.dragging = false
+                window.dragging = true
                 window.drag = Vector2.new(mouseLocation.X - main_frame.Position.X, mouseLocation.Y - main_frame.Position.Y)
             end
         end
@@ -3919,7 +3919,7 @@ do
     end
 end
 -- // Init
---[[do
+do
     local title_string = "Splix - Private | %A, %B"
     local day = os.date(" %d", os.time())
     local second_string = ", %Y."
@@ -4027,6 +4027,6 @@ end
     misc_adj:Slider({name = "Jump Height", min = 50, max = 400, def = 50})
     --
     lib:Initialize()
-end]]
+end
 --
 return library, utility, library.pointers, theme
